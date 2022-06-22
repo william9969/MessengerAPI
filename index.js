@@ -3,12 +3,14 @@
 var express = require("express");
 var request = require("request");
 var bodyParser = require("body-parser");
+//var distDir = __dirname + "/dist/";
 
+//app.use(express.static(distDir));
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 // configurar el puerto y el mensaje en caso de exito
-app.listen((process.env.PORT || 5000), () => console.log('El servidor webhook esta escchando!'));
+app.listen((process.env.PORT || 3000), () => console.log('El servidor webhook esta escchando!'));
 
 // Ruta de la pagina index
 app.get("/", function (req, res) {
